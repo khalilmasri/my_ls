@@ -1,27 +1,57 @@
-Dear user:
+# my_ls
 
-my_ls terminal command is a re-creation of UNIX ls.
+**SPECIFICATIONS**
 
-Inside these files, you could see how the ls command works but in a modified way.
+Write a programm called my_ls. Following the specifications of this man page.
 
-I will keep all files and not use .gitignore for you to experiment and have a look at the code that I used, also I'm leaving 
-2 directories for you ("dir1", "dir2"), this 2 directories has some hidden files.
+**NAME**
 
-To start using you will have to make a file, so let's start 1 step at a time:
-1- Use the command "Make" in ssh terminal without quotes.
-2- run the command ./my_ls and use. .. dir1 dir2
-3- We have applied some special characters that need to be followed after "-"
-    examples:
-        -t for sorting the files by modification time.
-        -a for displaying the hidden files.
-    You could also use both in any order you like
-        examples:
-            -ta for a combination of -t -a 
-4- Just experiment and have fun.
+my_ls -- list directory contents
 
-**DON'T FORGET TO CLEAN** use the command make clean
+**SYNOPSIS**
 
-Remember User coding is fun and amazing.
+my_ls [-at] [file ...]
 
-Kind regards,
-my_ls developer# my_ls
+**DESCRIPTION**
+
+For each operand that names a file of a type other than directory, my_ls displays its name as well as any requested, associated information. For each operand that names a file of type directory, my_ls displays the names of files contained within that directory, as well as any requested, associated information.
+
+If no operands are given, the contents of the current directory are displayed. If more than one operand is given, non-directory operands are displayed first; directory and non-directory operands are sorted separately and in lexicographical order.
+
+The following options are available:
+
+-a Include directory entries whose names begin with a dot (.).
+
+-t Sort by time modified (most recently modified first) before sorting the operands by lexicographical order.
+
+**Requirements**
+
+The code must be compiled with the flags -Wall -Wextra -Werror.
+
+**Hint(s)**
+
+Global variables are strictly FORBIDDEN
+
+tv_sec AND tv_nsec are used for the -t options
+
+use st_mtim
+
+**Authorized functions**
+
+malloc(3)
+
+free(3)
+
+printf(3)
+
+write(2)
+
+stat(2)
+
+lstat(2)
+
+opendir(2)
+
+closedir(2)
+
+readdir(2)
